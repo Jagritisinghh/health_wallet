@@ -29,7 +29,9 @@ exports.login = (req, res) => {
     const sql = `SELECT * FROM users WHERE username = ?`;
 
     db.get(sql, [username], async (err, user) => {
-        if (err || !user) return res.status(404).json({ error: "User not found" });
+        if (err || !user){ 
+            console.log(err)
+            return res.status(404).json({ error: "User not found" ,err});}
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).json({ error: "Invalid credentials" });

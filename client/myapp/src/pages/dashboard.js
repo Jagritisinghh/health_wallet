@@ -56,7 +56,10 @@ const Dashboard = () => {
             <Upload size={20} /> Reports
           </button>
         </nav>
-        <button onClick={() => { localStorage.clear(); navigate('/login'); }} className="flex items-center gap-4 p-4 text-red-500 hover:bg-red-50 rounded-2xl font-bold mt-auto transition-all">
+        <button onClick={() => { 
+    localStorage.clear(); 
+    window.location.href = '/login'; 
+  }} className="flex items-center gap-4 p-4 text-red-500 hover:bg-red-50 rounded-2xl font-bold mt-auto transition-all">
           <LogOut size={20} /> Logout
         </button>
       </aside>

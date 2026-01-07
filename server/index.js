@@ -3,9 +3,9 @@ const cors=require("cors");
 const {initDB}=require('./database/schema');
 const app=express();
 
-app.use(cors());
+
 app.use(cors({
-  origin: 'http://localhost:3001',
+  origin: 'https://health-wallet-1-qjof.onrender.com',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
